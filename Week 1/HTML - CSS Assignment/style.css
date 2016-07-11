@@ -1,0 +1,53 @@
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  empty-cells: show;
+}
+
+th.column {
+  font-style: italic;
+  font-weight: normal;
+}
+
+tr:nth-of-type(odd) {
+  background: mediumseagreen;
+}
+
+tr:nth-of-type(even) {
+  background: lightskyblue;
+}
+
+tr.firstRow {
+  background: white;
+}
+
+td.footer {
+  background: white;
+}
+
+div.outer-content {
+  background: pink;
+  position: relative;
+  top: 20px;
+  left: 0px;
+  width: 75%;
+}
+
+div.inner-content {
+  background: blue;
+  margin: 0 auto;
+  text-align: center;
+  width: 75%
+}
+
+#postForm {
+  position: relative;
+  top: 40px;
+}
+
+#getForm {
+  position: relative;
+  top: 60px;
+}
