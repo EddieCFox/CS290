@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Weather Form</title>
+ </head>
+ <body>
+
+ 	<form id = "weather" method = "get">
+ 		<fieldset>
+
+ 			<legend> Enter the zip code or city of the location you would like weather information on. (Only One) </legend>
+ 			<br>
+ 			<legend> If you enter both a zip code and a city, the zip code will be chosen. </legend>
+
+ 			<fieldset>
+ 				<label> Zip Code: <input type = "number" name = "weather_zip" id = "zip_input"> </label>
+ 			</fieldset>
+
+ 			<fieldset>
+ 				<label> City Name: <input type = "text" name = "weather_city" id = "city_input"> </label>
+ 			</fieldset>
+
+ 			 <button id="weather_button" type="submit"> Submit </button>
+ 		</fieldset>
+
+ 	</form>
+
+ 	<div id = "weather_info">
+
+ 	<h2 id = "weather_annoucnement"></h2>
+
+ 	<span id = "location"> </span> <br>
+ 	<span id = "weather_description"> </span> <br>
+ 	<span id = "current_temperature"> </span> <br>
+ 	<span id = "pressure"> </span> <br>
+ 	<span id = "humidity"> </span> <br>
+ 	<span id = "wind_speed"> </span> <br>
+
+ 	</div>
+
+	<script src="weather_script.js"></script>
+ </body>
+</html>
