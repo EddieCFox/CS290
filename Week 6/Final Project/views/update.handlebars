@@ -1,0 +1,41 @@
+<form id="newExercise" action="/update">
+
+   <fieldset>
+
+	<legend> Please enter exercise information </legend>
+
+	<label for="eName">Name:</label>
+	    <input type="text" name="eName" id="eName" value="{{workouts.name}}"> <br>
+
+	<label for="reps">Reps: </label>
+	    <input type="number" name="reps" id="reps" value="{{workouts.reps}}"> <br>
+
+	<label for="weight">Weight:</label>
+	    <input type="number" name="weight" id="weight" value="{{workouts.weight}}"> <br>
+
+	<label for="date">Date(YYYY-MM-DD):</label>
+	    <input type="date" name="date" id="date" value="{{workouts.date}}"> <br>
+
+	<!-- Here, I have different code, depending on if the unit is pounds or kilograms, and add a checkbox. -->
+
+	{{#if workouts.lbs}}
+	    <label for="lbs">Lbs</label>
+ 	        <input type="radio" name="lbs" value="1" id="lbs" checked="checked">
+	    <label for="kgs">Kgs</label>
+	        <input type="radio" name="lbs" value="0"><br>
+
+	 {{else}}
+	    <label for="lbs">Lbs</label>
+ 	        <input type="radio" name="lbs" value="1" id="lbs">
+	    <label for="kgs">Kgs</label>
+	        <input type="radio" name="lbs" value="0" checked="checked"><br>
+
+	 {{/if}}
+
+	 <!-- Here, we create a hidden input with the value being the ID of the workout updated, so the server can draw upon that information later. -->
+
+	<input type="hidden" name="id" value={{workouts.id}}>
+	<input type="submit" id="submit" value="Click to submit exercise info">
+	
+   </fieldset>
+</form>

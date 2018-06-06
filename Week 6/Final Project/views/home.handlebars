@@ -1,0 +1,68 @@
+<!-- This home.handlebars file deals with rendering the main page. -->
+
+
+<link rel="stylesheet" type="text/css" href="/css/stylesheet.css"> <!-- a link to the stylesheet.css in the public folder. Don't need to use /public because of static file setup in app.js -->
+
+<form id="newExercise" action="/insert"> <!-- goes to the insert page. -->
+   <fieldset>
+
+	<legend>Please enter information about the exercise you would like to add. </legend>
+
+	<label for="eName">Name:</label>
+	    <input type="text" name="eName" id="eName"><br>
+	<label for="reps">Reps:</label>
+	    <input type="number" name="reps" id="reps"><br>
+	<label for="weight">Weight:</label>
+	    <input type="number" name="weight" id="weight"><br>
+	<label for="date">Date (YYYY-MM-DD):</label>
+	    <input type="date" name="date" id="date"><br>
+
+	<!-- lbs and kgs needs to be a radio because only one can be chosen, not both. -->
+
+	<label for="lbs">Lbs</label>
+ 	    <input type="radio" name="lbs" value="1" id="lbs">
+	<label for="kgs">Kgs</label>
+	    <input type="radio" name="lbs" value="0"><br>
+
+	<input type="submit" id="submit" value="Click to submit exercise info">
+
+   </fieldset>
+</form>
+
+<h1>Workout Information</h1>
+<table id="workoutTable">
+
+    <tr>
+	<th style="display:none"> ID <!-- We want to hide the ID from the user. -->
+	<th> Exercise</th>
+	<th> Reps</th>
+	<th> Weight</th>
+	<th> Pounds or Kilograms</th>
+	<th> Date</th>
+	<th> Edit</th>
+	<th> Delete</th>
+    </tr>
+
+    {{#each workouts}} <!-- Fill in the information for the workout from the database, and add an edit and delete button. -->
+
+    <tr>
+	<td style="display:none"> {{this.id}} </td>
+	<td>{{this.name}} </td>
+	<td>{{this.reps}} </td> 
+	<td>{{this.weight}} </td> 
+	<td>{{this.lbs}} </td>
+	<td>{{this.date}} </td>
+
+
+	<!-- Add the Edit and Delete Buttons. -->
+
+    <td> <a href="/updateWorkout?id={{this.id}}"> <input type="button" value="Edit Exercise")"> </a> </td>
+	<td> <input type="button" value="Delete" onclick="deleteExercise('workoutTable',this,{{this.id}})"> </td>
+
+    </tr>
+    {{/each}}
+</table>
+
+<!-- Script for all the document Javascript. -->
+
+<script src="/js/script.js"> </script>
