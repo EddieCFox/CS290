@@ -1,0 +1,25 @@
+<h1> Recieved a GET request. </h1>
+
+{{#if getQueryData.length}} <!-- If there is any parameters within the get request, creater header row with name and value labels. -->
+
+	<h2> Here are the contents of the request. </h2>
+
+	<table>
+		<tr>
+			<th> Name: </th>
+			<th> Value: </th>
+		</tr>
+	
+
+	<!-- For each parameter in the data, make a row with the name and value of the parameter. -->
+
+	{{#each getQueryData}}
+		<tr>
+			<th> {{this.name}} </th>
+			<th> {{this.value}} </th>
+		</tr>
+	{{/each}}
+
+</table>
+
+{{/if}} <!-- Close if statement. -->

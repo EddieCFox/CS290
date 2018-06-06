@@ -1,0 +1,47 @@
+<h1> Recieved a POST request. </h1>
+
+{{#if postQueryData.length}} <!-- If there is any parameters within the post request, creater header row with name and value labels. -->
+	
+	<h2> Here is the html string contents of the request. </h2>
+	<table>
+		<tr>
+			<th> Name: </th>
+			<th> Value: </th>
+		</tr>
+	
+
+	<!-- For each parameter in the query data, make a row with the name and value of the parameter. -->
+
+	{{#each postQueryData}}
+		<tr>
+			<th> {{this.name}} </th>
+			<th> {{this.value}} </th>
+		</tr>
+	{{/each}}
+
+</table>
+
+{{/if}} <!-- Close if statement. -->
+
+{{#if postBodyData.length}} <!-- If ther eis any parameters within the body of the request, create body rows with parameter data. -->
+
+	<h2> Here is the contents of the request body.</h2>
+	<table>
+		<tr>
+			<th> Name: </th>
+			<th> Value: </th>
+		</tr>
+	
+
+	<!-- For each parameter in the query data, make a row with the name and value of the parameter. -->
+
+	{{#each postBodyData}}
+		<tr>
+			<th> {{this.name}} </th>
+			<th> {{this.value}} </th>
+		</tr>
+	{{/each}}
+
+	</table>
+
+{{/if}}
